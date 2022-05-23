@@ -7,6 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import Search from './bars/SearchBar';
 import BottomBar from './bars/BottomBar';
 import TopBar from './bars/TopBar';
+import GamingScreen from './screens/GamingScreen';
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -24,6 +25,7 @@ export default function App() {
       <TopBar/>
       <Search/>
     <HomeScreen/>
+    <GamingScreen/>
 <BottomBar/>
        </PaperProvider>
     </SafeAreaProvider>
