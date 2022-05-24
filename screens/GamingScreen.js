@@ -1,55 +1,16 @@
 import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
+import React, { useContext } from 'react';
 import { Avatar, Card, Title, Paragraph, Appbar, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-const list = [
-    {
-        id: 1,
-        title: 'Ratchet & Clank 2',
-        description: 'Ca claque !',
-        image: "https://www.cdiscount.com/pdt2/p/s/4/1/550x550/ratchetclankps4/rw/ratchet-clank-jeu-ps4.jpg",
-        support: '0h50',
-        price: '56'
-    },
-    {
-        id: 2,
-        title: 'Rocket League',
-        description: 'D\' la balle !',
-        image: "https://fr.shopping.rakuten.com/photo/rocket-league-edition-ultimate-1208766747_L.jpg",
-        support: 'PS2',
-        price: '149'
-    },
-    {
-        id: 3,
-        title: 'Resident Evil 4',
-        description: 'Mortel !',
-        image: "https://upload.wikimedia.org/wikipedia/en/d/d9/Resi4-gc-cover.jpg",
-        support: 'GameCube',
-        price: '12'
-    },
-    {
-        id: 4,
-        title: 'Mass Effect 3',
-        description: 'En effet...',
-        image: "https://images2.medimops.eu/product/01215b/M0B004H0MK4S-source.jpg",
-        support: 'Xbox 360',
-        price: '10'
-    },
-    {
-        id: 5,
+import ProductSheet from './ProductSheet';
+import List from '../list.json'
 
-        title: 'DayZ',
-        description: 'Pas Donald...',
-        image: "https://fr.shopping.rakuten.com/photo/dayz-1277200576_L.jpg",
-        support: 'Xbox One',
-        price: '39'
-    }
-]
-const GamingScreen = ({ navigation }) => {
+const list = List
+
+const GamingScreen = ({  route, navigation  }) => {
+
     return (
         <View>
-            <View style={{ height: '100px' }}>  <Button title='Go to ProductSheet'
-                onPress={() => { navigation.navigate('ProductSheet') }}
-            />
-            </View>
+        
 
             <FlatList
                 data={list}
@@ -79,9 +40,10 @@ const GamingScreen = ({ navigation }) => {
                                     <Text> {item.price} balles </Text>
                                     <Button mode="contained"
                                         type='text'
-                                    >
-                                        Buy
-                                    </Button>
+                                        title = 'Voir'
+                                        onPress={() => { navigation.navigate('ProductSheet',{id:item.id}) }}
+                                    />
+                                        
                                 </View>
 
                             </Card.Content>

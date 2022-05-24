@@ -15,7 +15,7 @@ const StackNav = () => {
             <Stack.Navigator initialRouteName='HomeScreen'>
 
 
-                <Stack.Screen name="OurDrawer" options={{ title: 'OurDrawer' }} component={OurDrawer} />
+                <Stack.Screen name="OurDrawer" options={{ title: 'Menu' }} component={OurDrawer} />
             </Stack.Navigator>
         </NavigationContainer>
 

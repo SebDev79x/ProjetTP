@@ -16,7 +16,6 @@ const theme = {
     accent: 'yellow',
   },
 }
-
 export default function App() {
   return (
 
