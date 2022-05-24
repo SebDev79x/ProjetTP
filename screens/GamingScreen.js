@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph, Appbar, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { StyleSheet, Text, View, FlatList, Button } from 'react-native';
+import { Avatar, Card, Title, Paragraph, Appbar, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 const list = [
     {
         id: 1,
@@ -43,9 +43,14 @@ const list = [
         price: '39'
     }
 ]
-const GamingScreen = () => {
+const GamingScreen = ({ navigation }) => {
     return (
         <View>
+            <View style={{ height: '100px' }}>  <Button title='Go to ProductSheet'
+                onPress={() => { navigation.navigate('ProductSheet') }}
+            />
+            </View>
+
             <FlatList
                 data={list}
                 keyExtractor={item => item.id}
@@ -64,35 +69,30 @@ const GamingScreen = () => {
                         }}>
                             <Card.Content style={[styles.content, { flex: 1 }]}>
                                 <View style={[{ flex: .5 }]}>
-                                {/*avec car cover style={{ width: '100%', height: '100%' }} */}
-                                    <Card.Cover  source={{ uri: item.image }} /></View>
-                                <View style={[styles.contentColumn,{ flex: .5 }]}>
+                                    <Card.Cover style={{ width: '100%', height: '100%' }}
+                                        source={{ uri: item.image }} /></View>
+                                <View style={[styles.contentColumn, { flex: .5 }]}>
                                     <Title style={styles.text}>{item.title}</Title>
                                     <Text> Descriptif : </Text>
 
                                     <Text> {item.description} </Text>
                                     <Text> {item.price} balles </Text>
                                     <Button mode="contained"
-                                    type='text'
+                                        type='text'
                                     >
-                                      Buy
-  </Button>
+                                        Buy
+                                    </Button>
                                 </View>
 
                             </Card.Content>
-                          {/*   <Card.Content style={styles.content}>
-                                <Paragraph>{item.id}</Paragraph>
-                            </Card.Content> */}
+
                             <Card.Content style={styles.content}>
-                                {/*  <View>{
-                      item.distance == '' ? <Paragraph>Aucune</Paragraph> : <Paragraph>{item.distance} Km</Paragraph>
-                    }</View> */}
-                                {/*                     <Paragraph>{item.time} mn</Paragraph>
- */}                  </Card.Content>
+                            </Card.Content>
                         </Card>
                     </View>
                 }
             />
+
         </View>
     )
 }
@@ -104,18 +104,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-text:{
-    fontSize: '15px',
+    text: {
+        fontSize: '15px',
 
-},
+    },
     content: {
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
     contentColumn: {
         flexDirection: 'column',
-        alignItems:'center',
-        justifyContent:'space-evenly'
+        alignItems: 'center',
+        justifyContent: 'space-evenly'
     }
 
 });

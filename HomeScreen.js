@@ -4,10 +4,10 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View>
             <Text>Home</Text>
+             
             <Button title='Go to GamingScreen'
-                onPress={() => { navigation.navigate('OurDrawer') }}
+                onPress={() => { navigation.navigate('GamingScreen') }}
             />
-            <Button title="Go back" onPress={() => navigation.goBack()} />
 
         </View>
 

@@ -22,14 +22,11 @@ export default function App() {
 
     <SafeAreaProvider>
       <PaperProvider theme={theme}>
-        {/* <TopBar/>
-      <Search/> */}
+      
+
         <Navig />
-        {/*  <HomeScreen/>
-    <ProductSheet/>
-    <GamingScreen/> */}
-        {/* <BottomBar/>
- */}       </PaperProvider>
+
+ </PaperProvider>
     </SafeAreaProvider>
   );
 }
