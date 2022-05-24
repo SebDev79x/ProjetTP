@@ -1,18 +1,8 @@
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
+import StackNav from './StackNav.js';
 
-const Drawer = createDrawerNavigator();
-
-const Nav = () => {
-    return (
-      
-   
-      <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-        </Drawer.Navigator>
-      </NavigationContainer> 
-    );
-  }
-  export default Nav;
+const Navig = () => {
+  return (
+    <StackNav />
+  );
+}
+export default Navig;
